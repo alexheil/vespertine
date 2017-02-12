@@ -1,0 +1,35 @@
+<% if @user.user_profile.first_name.blank? && @user.user_profile.last_name.blank? %>
+	<%= provide(:title, sanitize(@user.username)) %>
+<% else %>
+	<%= provide(:title, sanitize(@user.user_profile.first_name) + " " + sanitize(@user.user_profile.last_name)) %>
+<% end %>
+<div class="wrapper">
+	<div class="container">
+		<div class="largetitle medvertspace">
+      <%= @user.user_profile.first_name %> <%= @user.user_profile.last_name %>
+    </div>
+    <div class="content">
+    	 List of people and Conversations will go here
+    </div>
+    <div class="sidebar">
+	    <div class="minivertspace minititle">
+	    	Age
+	    </div>
+	    <div class="minivertspace pushright">
+	    	<%= @user.user_profile.age %>
+	    </div>
+	    <div class="minivertspace minititle">
+	    	Location
+	    </div>
+	    <div class="minivertspace pushright">
+	    	<%= @user.user_profile.location %>
+	    </div>
+	    <div class="minivertspace minititle">
+	    	Biography
+	    </div>
+	    <div class="minivertspace pushright">
+	    	<%= @user.user_profile.biography %>
+	    </div>
+    </div>
+	</div>
+</div>

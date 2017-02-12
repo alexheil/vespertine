@@ -1,0 +1,19 @@
+<% if @user && @user.user_profile.present? && @user.user_profile.theme_color.present? && @user.user_profile.theme_color != "#ff5757" %>
+  <meta name="theme-color" content="<%= @user.user_profile.theme_color %>" />
+<% else %>
+  <meta name="theme-color" content="#ff5757" />
+<% end %>
+
+<% if @user && @user.user_profile.present? && @user.user_profile.theme_color.present? && @user.user_profile.theme_color != "#673AB7" %>
+  <style>
+  a {
+    color: <%= @user.user_profile.theme_color %>;
+  }
+  a:hover {
+    color: #212121;
+  }
+  ::selection {
+    background: <%= @user.user_profile.theme_color %>;
+  }
+  </style>
+<% end %>

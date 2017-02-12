@@ -1,0 +1,40 @@
+<div class="wrapper">
+  <div class="smallcontainer">
+
+    <div class="largetitle medvertspace">
+      Register
+    </div>
+
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
+
+      <div class="minivertspace">
+        <div class="minititle minivertspace">
+          <%= f.label :username %>
+        </div>
+        <%= f.text_field :username, autofocus: true, class: "textfield" %>
+      </div>
+
+      <div class="minivertspace">
+        <div class="minititle minivertspace">
+          <%= f.label :email %>
+        </div>
+        <%= f.email_field :email, class: "textfield" %>
+      </div>
+
+      <div class="minivertspace">
+        <div class="minititle minivertspace">
+          <%= f.label :password %>
+        </div>
+        <%= f.password_field :password, autocomplete: "off", class: "textfield" %>
+      </div>
+
+      <div class="minivertspace">
+        <%= f.submit "Sign up", class: "submitbutton" %>
+      </div>
+    <% end %>
+
+    <%= render "users/shared/links" %>
+
+  </div>
+</div>

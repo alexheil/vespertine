@@ -1,0 +1,68 @@
+<%= render 'partials/header' %>
+
+<div class="wrapper">
+  <div class="smallcontainer">
+
+    <div class="largetitle medvertspace">
+      Edit Your Profile
+    </div>
+
+    <%= form_for(@profile, url: user_profile_path) do |f| %>
+
+      <div class="minivertspace twocol">
+        <div class="minititle minivertspace">
+          <%= f.label :first_name %>
+        </div>
+        <%= f.text_field :first_name, autofocus: true, class: "textfield" %>
+      </div>
+
+      <div class="minivertspace twocol">
+        <div class="minititle minivertspace">
+          <%= f.label :last_name %>
+        </div>
+        <%= f.text_field :last_name, autofocus: true, class: "textfield" %>
+      </div>
+
+      <div class="minivertspace twocol">
+        <div class="minititle minivertspace">
+          <%= f.label :age %>
+        </div>
+        <%= f.text_field :age, autofocus: true, class: "textfield" %>
+      </div>
+
+      <div class="minivertspace twocol">
+        <div class="minititle minivertspace">
+          <%= f.label :gender %>
+        </div>
+        <%= f.text_field :gender, autofocus: true, class: "textfield" %>
+      </div>
+
+      <div class="minivertspace">
+        <div class="minititle minivertspace">
+          <%= f.label :location %>
+        </div>
+        <%= f.text_field :location, autofocus: true, class: "textfield" %>
+      </div>
+
+      <div class="minivertspace">
+        <div class="minititle minivertspace">
+          <%= f.label :biography %>
+        </div>
+        <%= f.text_area :biography, autofocus: true, class: "textarea" %>
+      </div>
+
+      <div class="minivertspace">
+        <div class="minititle minivertspace">
+          <%= f.label :theme_color %>
+        </div>
+        <%= f.text_field :theme_color, autofocus: true, class: "textfield" %>
+      </div>
+
+
+      <div class="minivertspace">
+        <%= f.submit "Edit Profile", class: "submitbutton" %>
+      </div>
+    <% end %>
+
+  </div>
+</div>

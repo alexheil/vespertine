@@ -1,0 +1,18 @@
+<div class="wrapper">
+	<div class="container">
+ 		<div class="title largevertspace">
+ 			<%= link_to "Vespertine", root_url %>
+ 		</div>
+	 	<div class="medtitle medvertspace">
+	 		Can you get a date in 24 hours?
+		</div>
+		<% unless user_signed_in? %>
+			<div class="twocol">
+				<%= link_to "sign in", sign_in_path, class: "regbutton" %>
+			</div>
+			<div class="twocol">
+				<%= link_to "register", register_path, class: "specbutton" %>
+			</div>
+		<% end %>
+ 	</div>
+</div>

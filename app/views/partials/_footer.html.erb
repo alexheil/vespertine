@@ -1,0 +1,18 @@
+<footer class="wrapper">
+  <div class="container">
+    <nav class="nav">
+      <%= link_to "Vespertine", root_url, class: "navtitle" %>
+      <ul>
+      <% if user_signed_in? %>
+        <li><%= link_to "Your Page", user_path(current_user), class: "navlinks" %></li>
+        <li><%= link_to "Your Profile", edit_user_profile_path(current_user), class: "navlinks" %></li>
+        <li><%= link_to "Settings", edit_user_registration_path, class: "navlinks" %></li>
+        <li><%= link_to "Sign Out", sign_out_path, class: "navlinks" %></li>
+      <% else %>
+        <li><%= link_to "Sign In", sign_in_path, class: "navlinks" %></li>
+        <li><%= link_to "Register", register_path, class: "specbutton" %></li>
+      <% end %>
+      </ul>
+    </nav>
+  </div>
+</footer>

@@ -1,0 +1,39 @@
+<div class="wrapper">
+  <div class="smallcontainer">
+
+    <div class="largetitle medvertspace">
+      Sign In
+    </div>
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      
+      <div class="minivertspace">
+        <div class="minititle minivertspace">
+          <%= f.label :email %>
+        </div>
+        <%= f.email_field :email, class: "textfield" %>
+      </div>
+
+      <div class="minivertspace">
+        <div class="minititle minivertspace">
+          <%= f.label :password %>
+        </div>
+        <%= f.password_field :password, autocomplete: "off", class: "textfield" %>
+      </div>
+
+      <% if devise_mapping.rememberable? -%>
+        <div class="minivertspace">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me %>
+        </div>
+      <% end -%>
+
+      <div class="actions">
+        <%= f.submit "Sign In", class: "submitbutton" %>
+      </div>
+    <% end %>
+
+    <%= render "users/shared/links" %>
+
+  </div>
+</div>
